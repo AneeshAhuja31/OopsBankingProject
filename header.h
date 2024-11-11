@@ -76,11 +76,69 @@ public:
             userFile << "Father's Name: " << fathername << endl;
             userFile << "Account ID: " << id << endl;
             userFile << "Balance: " << balance << endl;
+            userFile << "PIN: " << pin << endl;
             userFile.close();
             cout << "Dedicated file created: " << userFileName << endl;
         }
         else {
             cout << "Error: Could not create user file " << userFileName << endl;
+        }
+    }
+
+    //Function to edit Admin File
+    void updateAdminFile(){
+        ifstream adminFile(ADMIN_FILE); //Open main Admin File for reading
+        ofstream tempFile("temp.txt"); //Open a temporary file for writing
+
+        string line;
+        bool updated = false;
+
+        while(getline(adminFile,line)){
+            int fieldId;
+            stringstream ss(line);
+            ss >> fieldId;
+
+            //Check if line contains the current account's ID
+            if(fieldId == id){
+                //Write the updated information to the temp file;
+                tempFile << name << " " << fathername << " " << id << endl;
+                updated = true;
+            }
+            else{
+                //Write the original line to the temp file
+                tempFile << line << endl;
+            }
+        }
+        adminFile.close();
+        tempFile.close();
+
+        //Replace original file with updated temp file
+        // c_str() converts string to an array of characters(std::string -> const char*)
+        remove(ADMIN_FILE.c_str()); //Delete old file
+        rename("temp.txt",ADMIN_FILE.c_str()); //Rename temp to the original filename
+
+        if(updated){
+            cout<< "Administrator file updated successfully.\n";
+        }
+        else {
+            cout << "Account ID not found in administrator file.\n";
+        }
+    }
+
+    //Function to edit User File
+    void updateUserFile(){
+        string userFileName = USER_ACCOUNT_DIR + "id" + to_string(id) +".txt";
+        ofstream userFile(userFileName);
+        if(userFile.is_open()){
+            userFile<<"Account Holder: "<< name << endl;
+            userFile<<"Father Name: "<< fathername << endl;
+            userFile<<"Account ID: "<< id << endl;
+            userFile<<"Balance: "<< balance << endl;
+            userFile<<"PIN: "<< pin << endl;
+            userFile.close();
+        }
+        else {
+            cout << "Error: Could not update user file " << userFileName << endl;
         }
     }
 
@@ -152,6 +210,9 @@ public:
                 balance += amount;
                 cout << "Deposited: " << amount << endl;
                 cout << "New Balance: " << balance << endl;
+
+                // Update user's account file
+                updateUserFile();
             }
             else {
                 cout << "Deposit amount must be positive.\n";
@@ -183,6 +244,9 @@ public:
                 balance -= amount;
                 cout << "Withdrew: " << amount << endl;
                 cout << "Remaining Balance: " << balance << endl;
+
+                // Update user's account file
+                updateUserFile();
             }
             else {
                 cout << "Insufficient balance or invalid amount.\n";

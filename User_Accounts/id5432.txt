@@ -1,0 +1,5 @@
+Account Holder: Harshit Mehta
+Father Name: Farhan Mehta
+Account ID: 5432
+Balance: 444400
+PIN: 1300
