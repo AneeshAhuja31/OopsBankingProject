@@ -1,5 +1,0 @@
-Account Holder: Garv Talvar
-Father Name: Aneesh Ahuja
-Account ID: 3498
-Balance: 69781
-PIN: 9012
