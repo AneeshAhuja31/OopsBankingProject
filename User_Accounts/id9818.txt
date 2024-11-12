@@ -1,5 +1,11 @@
 Account Holder: Vansh Sharma
-Father Name: Sameer Sharma
+Father's Name: Rajiv Raj Sharma
 Account ID: 9818
-Balance: 12500
+Balance: 15250
 PIN: 1234
+-----------------------------------------------------------------------------------
+Transaction Record :
+Date                Time                Transaction Type    Amount              Current Balance     
+Tue Nov 12 2024     18:45:12            Deposit             500                 5500                
+Tue Nov 12 2024     18:45:30            Withdraw            250                 5250                
+Tue Nov 12 2024     18:46:10            Deposit             10000               15250               

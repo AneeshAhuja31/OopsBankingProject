@@ -1,0 +1,10 @@
+Account Holder: Saksham Bharadwaj
+Father's Name: Vinay Bharadwaj
+Account ID: 7629
+Balance: 10997
+PIN: 5678
+-----------------------------------------------------------------------------------
+Transaction Record :
+Date                Time                Transaction Type    Amount              Current Balance     
+Tue Nov 12 2024     18:51:16            Deposit             1000                11000               
+Tue Nov 12 2024     18:51:25            Withdraw            3                   10997               

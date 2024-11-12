@@ -1,0 +1,12 @@
+Account Holder: Yash Garg
+Father's Name: Ansh Garg
+Account ID: 4444
+Balance: 1001689
+PIN: 9876
+-----------------------------------------------------------------------------------
+Transaction Record :
+Date                Time                Transaction Type    Amount              Current Balance     
+Tue Nov 12 2024     18:47:56            Deposit             1000                1700                
+Tue Nov 12 2024     18:48:09            Withdraw            1                   1699                
+Tue Nov 12 2024     18:48:42            Deposit             1000000             1001699             
+Tue Nov 12 2024     18:49:04            Withdraw            10                  1001689             

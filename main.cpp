@@ -1,13 +1,16 @@
-#include"header.h"
+#include"AdminAccount.h"
+
 int main() {
-    Account account;
-    int choice, accountId;
+    AdminAccount account;
+    int choice, accountId, adminPin;
 
     while (true) {
+        mainmenu:
         cout << "\nBanking System Menu:\n";
         cout << "1. Create New Account\n";
         cout << "2. Select Account by ID\n";
-        cout << "3. Exit\n";
+        cout << "3. Sign in as admin\n";
+        cout << "4. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -15,7 +18,7 @@ int main() {
         if (cin.fail()) {
             cin.clear();
             cin.ignore(10000, '\n');
-            cout << "Invalid input. Please enter a number.\n";
+            cout << "\nInvalid input. Please enter a number.\n";
             continue;
         }
 
@@ -25,14 +28,14 @@ int main() {
                 break;
 
             case 2:
-                cout << "Enter Account ID to select: ";
+                cout << "\nEnter Account ID to select: ";
                 cin >> accountId;
 
                 // Input validation for account ID
                 if (cin.fail()) {
                     cin.clear();
                     cin.ignore(10000, '\n');
-                    cout << "Invalid Account ID. Please enter a number.\n";
+                    cout << "\nInvalid Account ID. Please enter a number.\n";
                     break;
                 }
 
@@ -42,8 +45,10 @@ int main() {
                         cout << "\nSelect Action:\n";
                         cout << "1. Deposit\n";
                         cout << "2. Withdraw\n";
-                        cout << "3. Display Account Info\n";
-                        cout << "4. Go Back to Main Menu\n";
+                        cout << "3. Check Balance\n";
+                        cout << "4. Display Account Info\n";
+                        cout << "5. Get Transaction History\n";
+                        cout << "6. Go Back to Main Menu\n";
                         cout << "Enter your choice: ";
                         cin >> action;
 
@@ -51,7 +56,7 @@ int main() {
                         if (cin.fail()) {
                             cin.clear();
                             cin.ignore(10000, '\n');
-                            cout << "Invalid input. Please enter a number.\n";
+                            cout << "\nInvalid input. Please enter a number.\n";
                             continue;
                         }
 
@@ -63,13 +68,19 @@ int main() {
                                 account.withdraw();
                                 break;
                             case 3:
-                                account.displayAccountInfo();
+                                account.balanceInquiry();
                                 break;
                             case 4:
-                                cout << "Going back to the main menu...\n";
+                                account.displayAccountInfo();
                                 break;
+                            case 5:
+                                account.transactionHistory();
+                                break;
+                            case 6:
+                                cout << "\nGoing back to the main menu...\n";
+                                goto mainmenu;
                             default:
-                                cout << "Invalid choice. Try again.\n";
+                                cout << "\nInvalid choice. Try again.\n";
                         }
                         if (action == 4) break;  // Break out of the loop to return to the main menu
                     }
@@ -77,11 +88,48 @@ int main() {
                 break;
 
             case 3:
-                cout << "Exiting program. Goodbye!\n";
+                cout << "\nEnter Admin PIN:-";
+                cin>>adminPin;
+                if(account.checkAdminPin(adminPin)){
+                    int action;
+                    while (true) {
+                        cout << "\nSelect Action:\n";
+                        cout << "1. Display all accounts\n";
+                        cout << "2. Search an account\n";
+                        cout << "3. Delete an account\n";
+                        cout << "4. Go Back to Main Menu\n";
+                        cout << "Enter your choice: ";
+                        cin >> action;
+
+                        switch (action) {
+                            case 1:
+                                account.displayAllAccounts();
+                                break;
+                            case 2:
+                                account.accountSearch();
+                                break;
+                            case 3:
+                                account.accountDeletion();
+                                break;
+                            case 4:
+                                cout << "\nGoing back to the main menu...\n";
+                                goto mainmenu;
+                            default:
+                                cout << "\nInvalid choice. Try again.\n";
+                        }
+                    }
+                }else{
+                    cout<<"\nIncorrect PIN!";
+                    goto mainmenu;
+                }
+                return 0;
+                
+            case 4:
+                cout << "\nExiting program. Goodbye!\n";
                 return 0;
 
             default:
-                cout << "Invalid choice. Try again.\n";
+                cout << "\nInvalid choice. Try again.\n";
         }
     }
 
