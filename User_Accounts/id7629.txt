@@ -1,10 +1,11 @@
-Account Holder: Saksham Bharadwaj
-Father's Name: Vinay Bharadwaj
+Account Holder: Saksham Mittal
+Father's Name: Akul Mittal
 Account ID: 7629
-Balance: 10997
+Balance: 54305
 PIN: 5678
 -----------------------------------------------------------------------------------
 Transaction Record :
 Date                Time                Transaction Type    Amount              Current Balance     
-Tue Nov 12 2024     18:51:16            Deposit             1000                11000               
-Tue Nov 12 2024     18:51:25            Withdraw            3                   10997               
+Wed Nov 13 2024     15:06:34            Deposit             59005               64005               
+Wed Nov 13 2024     15:07:05            Withdraw            700                 63305               
+Wed Nov 13 2024     15:07:26            Withdraw            9000                54305               
