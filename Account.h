@@ -140,17 +140,6 @@ public:
                 }
             }
             userFile.close();
-            
-            // Now append the transaction history
-            // updatedContent << "-----------------------------------------------------------------------------------" << endl;
-            // updatedContent << "Transaction Record :" << endl;
-            // updatedContent << left
-            //                 << setw(20) << "Date"                
-            //                 << setw(20) << "Time"                
-            //                 << setw(20) << "Transaction Type"    
-            //                 << setw(20) << "Amount"              
-            //                 << setw(20) << "Current Balance"     
-            //                 << endl;
 
             // Write the transaction to the file
             ofstream userFileOut(userFileName, ios::trunc);  // Truncate the file and overwrite with updated content
