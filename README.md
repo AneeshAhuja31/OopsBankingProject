@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a college project. This C++ Banking System is a simple command-line program that allows users to perform basic banking operations such as creating an account, making deposits, withdrawals, recording and display transcation history of every account.We also have an Admin Menu which allows one to delete an account, display all accounts, etc. The program stores account details in text files, ensuring each user has a dedicated file for their account information. The system also includes a secure password handling feature for transactions.
+This is a college project. The Admin Pin is 1012 (if you want to access admin features) and if you want to access data or make a transaction in any of our prexisting accounts, please open the .txt file of the repected user in the User_Accounts folder.
 
 ## Features
 
@@ -21,8 +21,45 @@ This is a college project. This C++ Banking System is a simple command-line prog
 2. Aakash Sharma
 3. Divyansh Tulsiani
 
+## How to Clone the Repository
+
+To get a local copy of this project, follow these steps:
+
+1. **Install Git**: Ensure Git is installed on your computer. [Download Git](https://git-scm.com/downloads) if needed.
+2. **Clone the Repository**:
+   - Open a terminal or command prompt.
+   - Run the following command to clone the repository:
+
+     ```bash
+     git clone https://github.com/AneeshAhuja31/OopsBankingProject.git
+     ```
+
+3. **Navigate to the Project Directory**:
+   - After cloning, navigate to the project directory with:
+
+     ```bash
+     cd OopsBankingProject
+     ```
+
+You now have a local copy of the project, which you can open in a code editor or build as instructed in the overview.
+
+
 ## Directory Structure
 
-OopsBankingProject/ ├── BANKINGSYSTEMPROJECT/ │ ├── administrator.txt # Stores general account information │ ├── User_Accounts/ # Folder for individual account files │ ├── Account.h # Header file with base class for the program │ ├── SecuredAccount.h # Header file with derived class for the program  │ ├── AdminAccount.h # Header file with derived class for the program│ ├── main.cpp # C++ source code for the program
+OopsBankingProject/ 
+|
+├── BANKINGSYSTEMPROJECT/ 
+│ 
+├── administrator.txt # Stores general account information 
+│ 
+├── User_Accounts/ # Folder for individual account files 
+│ 
+├── Account.h # Header file with base class for the program 
+│ 
+├── SecuredAccount.h # Header file with derived class for the program  
+│ 
+├── AdminAccount.h # Header file with derived class for the program
+│ 
+├── main.cpp # C++ source code for the program
 
 
